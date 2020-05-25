@@ -376,7 +376,7 @@ class BreedingNode:
         return '\n'.join(str_list)
 
 
-class BreedingTree(Dict[int, BreedingNode]):
+class Breeding(Dict[int, BreedingNode]):
     __bred_pairs: Set[Set[int]]
 
     def __init__(self, species, include_seeds=True):
@@ -406,7 +406,7 @@ class BreedingTree(Dict[int, BreedingNode]):
             return nid2, nid1
 
     def breed(self, nid1, nid2):
-        curr_pair = BreedingTree.__get_pair(nid1, nid2)
+        curr_pair = Breeding.__get_pair(nid1, nid2)
         if curr_pair not in self.__bred_pairs:
             nodes = self[nid1].breed_with(self[nid2])
             for n in nodes:
