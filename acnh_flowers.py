@@ -261,6 +261,15 @@ class FlowerColor:
         df = cls.get_df()
         return df[(df['species'] == species) & (df['gene_sequence'] == gene_sequence)]['is_seed'].iat[0]
 
+    @classmethod
+    def print_table(cls, species):
+        df = cls.get_df()
+        df = df[df['species'] == species][['color', 'is_seed', 'gene_sequence']]
+        for c in Color:
+            gsl = df[df['color'] == c]['gene_sequence'].to_list()
+            for i in range(len(gsl)):
+                print('{0:6}|{1}'.format('' if i else c, gsl[i]))
+
 
 class NID(Iterator[int]):
     def __init__(self, start=0, step=1):
@@ -452,3 +461,5 @@ Pansy = Species.Pansy
 Rose = Species.Rose
 Tulip = Species.Tulip
 Windflower = Species.Windflower
+
+Table = FlowerColor.print_table
