@@ -231,7 +231,8 @@ class FlowerColor:
     @classmethod
     def get_df(cls):
         if cls.__table is None:
-            cls.__table = read_csv('https://raw.githubusercontent.com/zhongzachary/acnh_flowers/master/resources/flower_color.csv')
+            cls.__table = read_csv(
+                'https://raw.githubusercontent.com/zhongzachary/acnh_flowers/master/resources/flower_color.csv')
             cls.__table['species'] = cls.__table['species'].apply(lambda r: Species(r))
             cls.__table['gene_sequence'] = cls.__table.iloc[:, 1:5].apply(
                 lambda row: row.apply(lambda c: Gene.from_str(c) if type(c) is str else None), axis=1).apply(
@@ -441,3 +442,13 @@ class GSPFactory:
         for gs in gs_list:
             gsp[gs] = prob
         return gsp
+
+
+Cosmo = Species.Cosmo
+Hyacinth = Species.Hyacinth
+Lily = Species.Lily
+Mum = Species.Mum
+Pansy = Species.Pansy
+Rose = Species.Rose
+Tulip = Species.Tulip
+Windflower = Species.Windflower
