@@ -231,8 +231,7 @@ class FlowerColor:
     @classmethod
     def get_df(cls):
         if cls.__table is None:
-            cls.__table = read_csv(
-                'https://raw.githubusercontent.com/zhongzachary/acnh_flowers/master/resources/flower_color.csv')
+            cls.__table = read_csv('./resources/flower_color.csv')
             cls.__table['species'] = cls.__table['species'].apply(lambda r: Species(r))
             cls.__table['gene_sequence'] = cls.__table.iloc[:, 1:5].apply(
                 lambda row: row.apply(lambda c: Gene.from_str(c) if type(c) is str else None), axis=1).apply(
@@ -398,6 +397,7 @@ class Breeding(Dict[int, BreedingNode]):
             for c in [Color.Red, Color.Yellow, Color.White]:
                 node = BreedingNode(self.species, GSPFactory.create(self.species, c))
                 self[node.id] = node
+        print(self)
 
     def __str__(self):
         return self[0]._concise_header() + '\n' + '\n'.join(n._concise_str() for n in self.values())
@@ -463,3 +463,6 @@ Tulip = Species.Tulip
 Windflower = Species.Windflower
 
 Table = FlowerColor.print_table
+
+with open('./resources/intro.txt') as f:
+    print(f.read())

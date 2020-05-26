@@ -1,0 +1,13 @@
+ _____ _____ _____ _____    _____ __    _____ _ _ _ _____ _____ _____
+|  _  |     |   | |  |  |  |   __|  |  |     | | | |   __| __  |   __|
+|     |   --| | | |     |  |   __|  |__|  |  | | | |   __|    -|__   |
+|__|__|_____|_|___|__|__|  |__|  |_____|_____|_____|_____|__|__|_____|
+======================================================================
+This is a program for calculating the probability of cross breeding
+flowers in Animal Crossing New Horizon.
+Try
+>>> Table(Rose)            # list gene sequences of a flower type
+>>> plan = Breeding(Rose)  # create a plan
+>>> plan.breed(0,1)        # cross breed flower 0 and 1
+To read more details on how to use it, please go to:
+https://github.com/zhongzachary/acnh_flowers/blob/master/README.md
