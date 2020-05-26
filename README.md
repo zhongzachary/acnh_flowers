@@ -25,7 +25,7 @@ Windflower
 ```
 #### See Gene Sequences of A Flower Type
 ```
-Table(Mum)
+>>> Table(Mum)
 ```
 Output
 ```
