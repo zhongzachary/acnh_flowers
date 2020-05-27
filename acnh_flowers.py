@@ -211,8 +211,8 @@ class Color(Enum):
     Red = 'Red'
     Yellow = 'Yellow'
     White = 'White'
-    Pink = 'Pink'
     Orange = 'Orange'
+    Pink = 'Pink'
     Purple = 'Purple'
     Black = 'Black'
     Blue = 'Blue'
@@ -393,8 +393,9 @@ class Breeding(Dict[int, BreedingNode]):
         self.__bred_pairs = set()
         self.curr_gen = 0
         BreedingNode.restart_nid()
+        df = FlowerColor.get_df()
         if include_seeds:
-            for c in [Color.Red, Color.Yellow, Color.White]:
+            for c in df[(df['species'] == Windflower) & (df['is_seed'])]['color'].to_list():
                 node = BreedingNode(self.species, GSPFactory.create(self.species, c))
                 self[node.id] = node
         print(self)
