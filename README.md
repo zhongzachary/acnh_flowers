@@ -3,7 +3,7 @@
 This program allows you to plan how you want to cross breed flowers in Animal Crossing New Horizon.
 It provides the probability for your cross breeding results.
 
-The genetic information comes from Paleh ([reddit](https://www.reddit.com/r/ac_newhorizons/comments/g0i2rn/flower_genetics_guide/?utm_source=share&utm_medium=web2x), [Google Docs](https://docs.google.com/document/d/1ARIQCUc5YVEd01D7jtJT9EEJF45m07NXhAm4fOpNvCs)).
+The genetic information comes from Paleh ([reddit](https://www.reddit.com/r/AnimalCrossing/comments/fsyn1x/acnhacnl_flower_genetics_guide/), [Google Docs](https://docs.google.com/document/d/1ARIQCUc5YVEd01D7jtJT9EEJF45m07NXhAm4fOpNvCs)).
 
 ## Example Usages
 I recommend you to use repl.it to run it at https://acnhflowers.zhongzachary.repl.run.
