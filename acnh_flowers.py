@@ -372,10 +372,10 @@ class BreedingNode:
         return '\n'.join(str_list)
 
     def _concise_header(self):
-        return f"{'id':5}|{'color':6}|{'species':8}|{'prob':7}|{'rarity':7}|{'gen':3}|{'parents':7}|{'gsp'}"
+        return f"{'id':5}|{'color':6}|{'species':10}|{'prob':7}|{'rarity':7}|{'gen':3}|{'parents':7}|{'gsp'}"
 
     def _concise_str(self):
-        info = f'{self.id:5}|{self.color:6}|{self.species:8}|{self.prob:.5f}|{str(self.rarity)[:7].rjust(7, " ")}|{self.gen:3}|{",".join(str(p.id) for p in self.parents).rjust(7, " ")}|'
+        info = f'{self.id:5}|{self.color:6}|{self.species:10}|{self.prob:.5f}|{str(self.rarity)[:7].rjust(7, " ")}|{self.gen:3}|{",".join(str(p.id) for p in self.parents).rjust(7, " ")}|'
         str_list = []
         space = len(info)
         gsp_str = str(self.gsp).split('\n')
