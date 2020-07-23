@@ -395,7 +395,7 @@ class Breeding(Dict[int, BreedingNode]):
         BreedingNode.restart_nid()
         df = FlowerColor.get_df()
         if include_seeds:
-            for c in df[(df['species'] == Windflower) & (df['is_seed'])]['color'].to_list():
+            for c in df[(df['species'] == species) & (df['is_seed'])]['color'].to_list():
                 node = BreedingNode(self.species, GSPFactory.create(self.species, c))
                 self[node.id] = node
         print(self)
